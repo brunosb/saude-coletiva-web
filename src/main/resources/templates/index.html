@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html ng-app = "appSistemaSaude">
 	<head>
+	<base href="/"/>
 		<meta charset="UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/login.css" />
 		<title>Saude Coletiva</title>
 	</head>
 	<body>
-		<div id="map" style="width: 600px;height: 600px" ng-controller = "ueeController"></div>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<a class="navbar-left " href="/">
+			        <img alt="Brand" src="http://icon-icons.com/icons2/807/PNG/48/hospital-2_icon-icons.com_66067.png" />
+		      	</a>
+				
+				<div class = "navbar-right">
+					<a href="/login" data-toggle="modal" data-target="#login-modal" class = "btn btn-primary">Login</a>
+					<a href="/cadastro-usuario" class = "btn btn-primary"> Cadastrar</a>
+				</div>
+			</div>
+		</nav>
+	
+		<div ng-view = "ng-view">
+		
+		</div>
 	</body>
 	<footer>
 		<script src="./js/jquery-3.1.1.min.js"></script>
+		<script src="./js/bootstrap.min.js"></script>
 		<script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		<script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAZbZ8G4ZdQknbbgMyivx-vedsCoZx8aM"></script>
 		<script type="text/javascript" src="./js/jquery.googlemap.js"></script>
 		<script src="./js/app.js"></script>
-		<script src="./js/uee-controller.js"></script>
+		<script src="./controller/uue-controller.js"></script>
+		<script src="./controller/login-controller.js"></script>
+		<script src="./controller/cadastro-usuario-controller.js"></script>
 	</footer>
 </html>

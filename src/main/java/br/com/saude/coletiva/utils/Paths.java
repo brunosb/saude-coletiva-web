@@ -16,6 +16,8 @@ public final class Paths {
 	
 	public static final String ADMIN_PATH = PRIVATE_ROOT_PATH + USER_PATH + "/admin";
 	
+	public static final String LOGIN_PATH = "/login";
+	
 	//---------------------------------------------------------------------------------
 	
 	public static final String URGENCIA_EMERGENCIA_PATH = PUBLIC_ROOT_PATH + "/uue";

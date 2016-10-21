@@ -1,3 +1,0 @@
-appCliente.controller("estadoController", function(){
-	
-});
