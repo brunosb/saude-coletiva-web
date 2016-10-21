@@ -18,6 +18,6 @@ public final class Paths {
 	
 	//---------------------------------------------------------------------------------
 	
-	public static final String URGENCIA_EMERGENCIA_PATH = PUBLIC_ROOT_PATH + "uue";
+	public static final String URGENCIA_EMERGENCIA_PATH = PUBLIC_ROOT_PATH + "/uue";
 	
 }

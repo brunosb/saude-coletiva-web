@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app = "appSistemaSaude">
 	<head>
 		<meta charset="UTF-8"/>
 		<title>Saude Coletiva</title>
 	</head>
 	<body>
-		<div id="map" style="width: 600px;height: 600px"></div>
+		<div id="map" style="width: 600px;height: 600px" ng-controller = "ueeController"></div>
 	</body>
 	<footer>
 		<script src="./js/jquery-3.1.1.min.js"></script>
@@ -13,6 +13,6 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAZbZ8G4ZdQknbbgMyivx-vedsCoZx8aM"></script>
 		<script type="text/javascript" src="./js/jquery.googlemap.js"></script>
 		<script src="./js/app.js"></script>
-		<script src="./js/unidades-urgencia-emergencia.js"></script>
+		<script src="./js/uee-controller.js"></script>
 	</footer>
 </html>
