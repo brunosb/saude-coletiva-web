@@ -5,6 +5,7 @@ appSistemaSaude.config(function($routeProvider, $locationProvider){
 	.when("/api/public/uue",{templateUrl:'./view/mapa-urgencia-emergencia.html', controller:'uueController'})
 	.when("/login",{templateUrl: './view/login.html', controller:'loginController'})
 	.when("/cadastro-usuario",{templateUrl: './view/cadastro-usuario.html', controller: 'cadastroUsuarioController'})
+	.when("/home",{templateUrl:'./view/home.html',controller:'homeController'})
 	.otherwise({rediretTo:'/'});
 	
 	$locationProvider.html5Mode(true);
