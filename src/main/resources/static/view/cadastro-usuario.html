@@ -9,7 +9,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="name">Nome</label>  
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="Digite seu nome completo" class="form-control input-md" required="">
+  <input id="nome" ng-model="usuario.nome" type="text" placeholder="Digite seu nome completo" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -18,7 +18,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="email">Email</label>  
   <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="digite seu email" class="form-control input-md" required="">
+  <input id="email" ng-model="usuario.email" type="text" placeholder="digite seu email" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -27,7 +27,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="password">Senha</label>
   <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="digite sua senha" class="form-control input-md" required="">
+    <input id="password" ng-model="usuario.password" type="password" placeholder="digite sua senha" class="form-control input-md" required="">
     
   </div>
 </div>
@@ -36,7 +36,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="cadastrar"></label>
   <div class="col-md-4">
-    <button id="cadastrar" name="cadastrar" class="btn btn-primary">Cadastrar</button>
+    <button id="cadastrar" name="cadastrar" class="btn btn-primary" ng-click="cadastrarUsuario()">Cadastrar</button>
   </div>
 </div>
 

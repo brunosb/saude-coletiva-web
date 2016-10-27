@@ -1,0 +1,33 @@
+body {
+    font: bold 12px Arial;
+     }
+a {
+    text-decoration: none;
+  }
+#map{
+    height:500px; 
+    width:500px; 
+/*    box-shadow: 3px 3px 10px gray;*/  
+    }
+#repeat{ 
+     display: inline;
+     }
+#country_container { 
+     margin: 8px 2px 2px 0px; 
+     text-align: center; 
+     width: 90px; 
+     padding: 5px; 
+     color: white; 
+     background-color: gray; 
+     font-size: 16px; 
+     cursor: pointer;
+     }
+#country_container:hover { 
+     box-shadow: 0px 0px 10px blue;
+     background-color: gray; 
+     border: 1px solid gray; 
+     cursor: pointer; 
+     }
+#names { 
+     cursor: pointer; 
+       }
