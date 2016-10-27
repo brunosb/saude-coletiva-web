@@ -1,0 +1,26 @@
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Mapas das UPAs</h2>
+      <div id="map"></div>
+    	<div id="repeat" ng-repeat="marker in markers | orderBy : 'title'">
+         <a id="country_container" href="#" ng-click="openInfoWindow($event, marker)">
+         <label id="names" >{{marker.title}}</label></a>
+    </div>
+      
+    </div>
+    <div class="col-md-4">
+      <h2>informações adicionais</h2>
+      <p>
+		estava escrito nas estrelas
+
+      </p>
+      
+      
+    </div>
+  </div>
+  
+  
+    
+</div>

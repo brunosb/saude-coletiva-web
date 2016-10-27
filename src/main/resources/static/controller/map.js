@@ -1,33 +1,24 @@
 var cities = [
               {
-                  place : 'India',
-                  desc : 'A country of culture and tradition!',
-                  lat : 23.200000,
-                  long : 79.225487
+                  place : 'UPA Itaperi',
+                  desc : 'Pediatria',
+                  lat : -3.7956203,
+                  long : -38.5544505,
+                  adress:'R. Betel - Dendê, Fortaleza - CE'
               },
               {
-                  place : 'New Delhi',
-                  desc : 'Capital of India...',
-                  lat : 28.500000,
-                  long : 77.250000
+                  place : 'UPA Canindezinho',
+                  desc : 'Saúde da mulher',
+                  lat : -3.8216391,
+                  long : -38.6088886,
+                  adress:'R. José Paixão de Lima, S/n - Canindezinho, Fortaleza - CE'
               },
               {
-                  place : 'Kolkata',
-                  desc : 'City of Joy...',
-                  lat : 22.500000,
-                  long : 88.400000
-              },
-              {
-                  place : 'Mumbai',
-                  desc : 'Commercial city!',
-                  lat : 19.000000,
-                  long : 72.90000
-              },
-              {
-                  place : 'Bangalore',
-                  desc : 'Silicon Valley of India...',
-                  lat : 12.9667,
-                  long : 77.5667
+                  place : 'UPA José Walte',
+                  desc : 'Saúde do homem',
+                  lat : -3.8255751,
+                  long : -38.541341,
+                  adress:'Av. Presidente Costa e Silva, s/n - Prefeito José Walter, Fortaleza - CE'
               }
           ];
 
@@ -36,8 +27,8 @@ var cities = [
 		appSistemaSaude.controller('mapController', function ($scope) {
               
               var mapOptions = {
-                  zoom: 4,
-                  center: new google.maps.LatLng(25,80),
+                  zoom: 10,
+                  center: new google.maps.LatLng(-3.7913402,-38.6593579),
                   mapTypeId: google.maps.MapTypeId.ROADMAP
               }
 
@@ -54,7 +45,7 @@ var cities = [
                       position: new google.maps.LatLng(info.lat, info.long),
                       title: info.place
                   });
-                  marker.content = '<div class="infoWindowContent">' + info.desc + '<br />' + info.lat + ' E,' + info.long +  ' N, </div>';
+                  marker.content = '<div class="infoWindowContent">' + info.desc + '<br />' + info.adress +  ' </div>';
                   
                   google.maps.event.addListener(marker, 'click', function(){
                       infoWindow.setContent('<h2>' + marker.title + '</h2>' + 
