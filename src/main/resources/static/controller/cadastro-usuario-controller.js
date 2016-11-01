@@ -6,8 +6,6 @@ appSistemaSaude.controller("cadastroUsuarioController", function($scope, $http){
 				method:'POST',
 				url:'api/private/user',
 				data:$scope.usuario	
-
-			
 			}).then(function(response){
 				$scope.usuario = response.data
 			}, function(response) {

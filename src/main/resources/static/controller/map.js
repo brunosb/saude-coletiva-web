@@ -1,4 +1,6 @@
-var cities = [
+
+
+/*var cities = [
               {
                   place : 'UPA Itaperi',
                   desc : 'Pediatria',
@@ -20,12 +22,27 @@ var cities = [
                   long : -38.541341,
                   adress:'Av. Presidente Costa e Silva, s/n - Prefeito José Walter, Fortaleza - CE'
               }
-          ];
+          ];*/
 
           //Angular App Module and Controller
          
-		appSistemaSaude.controller('mapController', function ($scope) {
-              
+		appSistemaSaude.controller('mapController', function ($scope,$http) {
+			
+			$scope.localidades = [];
+			carregarLocalidades = function() {
+				$http({
+					method : 'GET',
+					url : '/api/public/uue',
+				}).then(function(response) {
+					$scope.localidades = response.data;
+				}, function(response) {
+					console.log(response.data);
+					console.log(response.status);
+				});
+			};
+			//carregarlocalidades();
+			
+			
               var mapOptions = {
                   zoom: 10,
                   center: new google.maps.LatLng(-3.7913402,-38.6593579),
@@ -42,7 +59,7 @@ var cities = [
                   
                   var marker = new google.maps.Marker({
                       map: $scope.map,
-                      position: new google.maps.LatLng(info.lat, info.long),
+                      position: new google.maps.LatLng(info.endecoCoordenada),
                       title: info.place
                   });
                   marker.content = '<div class="infoWindowContent">' + info.desc + '<br />' + info.adress +  ' </div>';

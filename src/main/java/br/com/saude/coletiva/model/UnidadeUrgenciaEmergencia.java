@@ -27,11 +27,11 @@ public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 	@NotNull
 	private String especialidade;
 
-	public UnidadeUrgenciaEmergencia(String nome, String enderecoCordenada, String enderecoPostal,
+	public UnidadeUrgenciaEmergencia(String nome, String enderecoCoordenada, String enderecoPostal,
 			String especialidade) {
 		super();
 		this.nome = nome;
-		this.enderecoCoordenada = enderecoCordenada;
+		this.enderecoCoordenada = enderecoCoordenada;
 		this.enderecoPostal = enderecoPostal;
 		this.especialidade = especialidade;
 	}
@@ -48,12 +48,12 @@ public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 		this.nome = nome;
 	}
 
-	public String getEnderecoCordenada() {
+	public String getEnderecoCoordenada() {
 		return enderecoCoordenada;
 	}
 
-	public void setEnderecoCordenada(String enderecoCordenada) {
-		this.enderecoCoordenada = enderecoCordenada;
+	public void setEnderecoCoordenada(String enderecoCoordenada) {
+		this.enderecoCoordenada = enderecoCoordenada;
 	}
 
 	public String getEnderecoPostal() {
