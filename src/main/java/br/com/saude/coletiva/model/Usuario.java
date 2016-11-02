@@ -1,5 +1,6 @@
 package br.com.saude.coletiva.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.AttributeOverride;
@@ -10,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import br.com.saude.coletiva.utils.BaseEntity;
@@ -31,6 +34,13 @@ public class Usuario extends BaseEntity<Long>{
 	@NotNull
 	private String password;
 	
+	@NotNull
+    private Boolean enabled;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @NotNull
+    private Date lastPasswordResetDate;
+	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_usuario_permissao", joinColumns = @JoinColumn(name="usuario_id"), inverseJoinColumns = @JoinColumn(name="permissao_id"))
 	private List<Permissao> permissoes;
@@ -39,11 +49,14 @@ public class Usuario extends BaseEntity<Long>{
 		super();
 	}
 
-	public Usuario(String nome, String email, String password, List<Permissao> permissoes) {
+	public Usuario(String nome, String email, String password, Boolean enabled, Date lastPasswordResetDate,
+			List<Permissao> permissoes) {
 		super();
 		this.nome = nome;
 		this.email = email;
 		this.password = password;
+		this.enabled = enabled;
+		this.lastPasswordResetDate = lastPasswordResetDate;
 		this.permissoes = permissoes;
 	}
 
@@ -71,6 +84,22 @@ public class Usuario extends BaseEntity<Long>{
 		this.password = password;
 	}
 
+	public Boolean getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(Boolean enabled) {
+		this.enabled = enabled;
+	}
+
+	public Date getLastPasswordResetDate() {
+		return lastPasswordResetDate;
+	}
+
+	public void setLastPasswordResetDate(Date lastPasswordResetDate) {
+		this.lastPasswordResetDate = lastPasswordResetDate;
+	}
+
 	public List<Permissao> getPermissoes() {
 		return permissoes;
 	}
@@ -78,6 +107,8 @@ public class Usuario extends BaseEntity<Long>{
 	public void setPermissoes(List<Permissao> permissoes) {
 		this.permissoes = permissoes;
 	}
+
+	
 	
 	
 }
