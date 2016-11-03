@@ -1,12 +1,12 @@
 appSistemaSaude.controller("uueController", function($scope, $http) {
 
-	$scope.maps = [];
+	$scope.upas = [];
 	carregarMap = function() {
 		$http({
 			method : 'GET',
 			url : '/api/public/uue',
 		}).then(function(response) {
-			$scope.maps = response.data;
+			$scope.upas = response.data;
 		}, function(response) {
 			console.log(response.data);
 			console.log(response.status);
@@ -25,13 +25,13 @@ appSistemaSaude.controller("uueController", function($scope, $http) {
         
         var infoWindow = new google.maps.InfoWindow();  
         	    
-        var createMarker = function (info){
+        var createMarker = function (upas){
             var marker = new google.maps.Marker({
                 map: $scope.map,
-                position: new google.maps.LatLng(info.maps.endecoCoordenada),
-                title: info.maps.nome
+                position: new google.maps.LatLng(upas.enderecoCoordenada),
+                title: upas.nome
             });
-            marker.content = '<div class="infoWindowContent">' + info.maps.especialidade + '<br />' + info.maps.enderecoPostal +  ' </div>';
+            marker.content = '<div class="infoWindowContent">' + upas.especialidade + '<br />' + upas.enderecoPostal +  ' </div>';
             
             google.maps.event.addListener(marker, 'click', function(){
                 infoWindow.setContent('<h2>' + marker.title + '</h2>' + 
@@ -43,8 +43,8 @@ appSistemaSaude.controller("uueController", function($scope, $http) {
             
         }  
         
-        for (i = 0; i < $scope.maps.length; i++){
-        	createMarker($scope.maps[i]);
+        for (i = 0; i < $scope.upas.length; i++){
+        	createMarker($scope.upas[i]);
         }
 
         $scope.openInfoWindow = function(e, selectedMarker){

@@ -1,28 +1,26 @@
 
 
-/*var cities = [
+var cities = [
               {
                   place : 'UPA Itaperi',
                   desc : 'Pediatria',
-                  lat : -3.7956203,
-                  long : -38.5544505,
-                  adress:'R. Betel - Dendê, Fortaleza - CE'
+                  //testando numa variavel soh
+                  //lat: -3.7956203, -38.5544505,
+                   adress:'R. Betel - Dendê, Fortaleza - CE'
               },
               {
                   place : 'UPA Canindezinho',
                   desc : 'Saúde da mulher',
-                  lat : -3.8216391,
-                  long : -38.6088886,
+                  //lat : -3.8216391 -38.6088886,
                   adress:'R. José Paixão de Lima, S/n - Canindezinho, Fortaleza - CE'
               },
               {
                   place : 'UPA José Walte',
                   desc : 'Saúde do homem',
-                  lat : -3.8255751,
-                  long : -38.541341,
+                 // lat : -3.8255751 -38.541341,
                   adress:'Av. Presidente Costa e Silva, s/n - Prefeito José Walter, Fortaleza - CE'
               }
-          ];*/
+          ];
 
           //Angular App Module and Controller
          
@@ -59,7 +57,7 @@
                   
                   var marker = new google.maps.Marker({
                       map: $scope.map,
-                      position: new google.maps.LatLng(info.endecoCoordenada),
+                      position: new google.maps.LatLng(info.lat),
                       title: info.place
                   });
                   marker.content = '<div class="infoWindowContent">' + info.desc + '<br />' + info.adress +  ' </div>';
