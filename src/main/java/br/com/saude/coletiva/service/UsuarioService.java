@@ -19,7 +19,7 @@ import br.com.saude.coletiva.utils.ServiceGeneric;
 @RequestMapping(path = Paths.USER_PATH)
 public class UsuarioService extends ServiceGeneric<Usuario, Long>{
 
-	@Value("${jwt.header}")
+	@Value("Authorization")
 	private String tokenHeader;
 	
 	@Autowired

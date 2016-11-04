@@ -1,7 +1,8 @@
-package br.com.saude.coletiva.security;
+package br.com.saude.coletiva;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -15,7 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@SuppressWarnings("SpringJavaAutowiringInspection")
+import br.com.saude.coletiva.security.JwtAuthenticationEntryPoint;
+import br.com.saude.coletiva.security.JwtAuthenticationTokenFilter;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
@@ -25,12 +28,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	private JwtAuthenticationEntryPoint unauthorizedHandler;
 	
 	@Autowired
-	private UserDetailsService userDetailsService;
+	private UserDetailsService userService;
 	
 	@Autowired
     public void configureAuthentication(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
-                .userDetailsService(this.userDetailsService)
+                .userDetailsService(this.userService)
                 .passwordEncoder(passwordEncoder());
     }
 
@@ -61,9 +64,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 // allow anonymous resource requests
                 .antMatchers(
                         HttpMethod.GET,
-                        "/",
+                        "/**",
                         "/*.html",
                         "/favicon.ico",
+                        "/*.png",
+                        "/*jpeg",
+                        "/*.gif",
                         "/**/*.html",
                         "/**/*.css",
                         "/**/*.js"

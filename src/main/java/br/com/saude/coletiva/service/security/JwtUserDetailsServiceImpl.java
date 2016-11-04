@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import br.com.saude.coletiva.model.Usuario;
 import br.com.saude.coletiva.repository.UsuarioRepository;
 import br.com.saude.coletiva.security.JwtUsuarioFactory;
 
+@Service
 public class JwtUserDetailsServiceImpl implements UserDetailsService{
 
 	@Autowired
