@@ -9,4 +9,4 @@ appSistemaSaude.controller("loginController", function ($scope, $http) {
 		})
 	}
 	
-})
+});
