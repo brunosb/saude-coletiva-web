@@ -1,41 +1,39 @@
 <div class="container">
-  
-  <div class="row">
-    <div class="col-md-8">
-      <h2>Mapas das UPAs</h2>
-      <div id="map"></div>
-    </div>
-      
-    </div>
-    <div class="col-md-4">
-      <h2>Pesquise informações adicionais</h2>
-      <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    	<span id="search_concept">Filtrar por</span> <i class="glyphicon glyphicon-triangle-bottom"></i>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="/especialidades-parara">Especialidades</a></li>
-                      <li><a href="/regionais-parara">Regionais</a></li>
-                      <li><a href="/emergencia-parara">Emergencia</a></li>
-                      <li><a href="/vrau-parara">Mais rapidos </a></li>
-          
-                    </ul>
-                </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">         
-                <input type="text" class="form-control" name="x" placeholder="Digite aqui">
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></span></button>
-                </span>
-            </div>
-      {{upas}};
-      -----------
-      falta metodo para retornar soh uma partezinha do json eu acho
-      {{upas[0]}}
-      
-    </div>
-  </div>
-  
-  
-    
+
+	<div class="row">
+		<div class="col-md-8">
+			<h2>Mapas das UPAs</h2>
+			<div id="map"></div>
+		</div>
+
+	</div>
+	<div class="col-md-4">
+		<h2>Pesquise informações adicionais</h2>
+		<div class="input-group">
+			<div class="input-group-btn search-panel">
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<span id="search_concept">Filtrar por</span> <i class="glyphicon glyphicon-triangle-bottom"></i>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="/especialidades-parara">Especialidades</a></li>
+					<li><a href="/regionais-parara">Regionais</a></li>
+					<li><a href="/emergencia-parara">Emergencia</a></li>
+					<li><a href="/vrau-parara">Mais rapidos </a></li>
+
+				</ul>
+			</div>
+			<input type="hidden" name="search_param" value="all" id="search_param"> <input type="text" class="form-control" name="x" placeholder="Digite aqui"> <span class="input-group-btn">
+				<button class="btn btn-default" type="button">
+					<i class="glyphicon glyphicon-search"></i>
+			</span>
+			</button>
+			</span>
+		</div>
+		{{upas}}; ----------- falta metodo para retornar soh uma partezinha do json eu acho {{upas[0]}}
+
+	</div>
+</div>
+
+
+
 </div>

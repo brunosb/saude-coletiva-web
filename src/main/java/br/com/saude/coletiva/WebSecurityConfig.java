@@ -2,7 +2,6 @@ package br.com.saude.coletiva;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -63,18 +62,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 
                 // allow anonymous resource requests
                 .antMatchers(
-                        HttpMethod.GET,
-                        "/**",
+                        "/api/**",
+                        "/home/**",
                         "/*.html",
                         "/favicon.ico",
-                        "/*.png",
-                        "/*jpeg",
-                        "/*.gif",
+                        "/**/*.png",
+                        "/**/*.jpeg",
+                        "/**/*.jpg",
+                        "/**/*.gif",
                         "/**/*.html",
                         "/**/*.css",
-                        "/**/*.js"
+                        "/**/*.js",
+                        "/fonts/**"
                 ).permitAll()
-                .antMatchers("/auth/**").permitAll()
+                .antMatchers("/login").permitAll()
                 .anyRequest().authenticated();
 
         // Custom JWT based security filter
