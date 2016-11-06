@@ -13,7 +13,7 @@ import br.com.saude.coletiva.utils.BaseEntity;
 @AttributeOverride(name = "id", column = @Column(name = "pk_id"))
 public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1731410271993907487L;
 
 	@NotNull
 	private String nome;

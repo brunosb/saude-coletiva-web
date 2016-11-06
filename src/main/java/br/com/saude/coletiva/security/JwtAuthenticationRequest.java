@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class JwtAuthenticationRequest implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1654892856174047690L;
+	
 	private String username;
     private String password;
 

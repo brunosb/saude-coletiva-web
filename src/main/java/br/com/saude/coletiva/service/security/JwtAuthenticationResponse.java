@@ -4,8 +4,7 @@ import java.io.Serializable;
 
 public class JwtAuthenticationResponse implements Serializable{
 
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = -1626955127230993254L;
 	private final String token;
 
     public JwtAuthenticationResponse(String token) {

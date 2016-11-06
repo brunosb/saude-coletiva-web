@@ -22,7 +22,7 @@ import br.com.saude.coletiva.utils.BaseEntity;
 @AttributeOverride(name = "id", column = @Column(name = "pk_id"))
 public class Usuario extends BaseEntity<Long>{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -6935284284963100953L;
 
 	@NotNull
 	private String nome;

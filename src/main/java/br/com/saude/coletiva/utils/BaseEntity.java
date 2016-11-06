@@ -8,8 +8,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public abstract class BaseEntity<ID extends Serializable> extends AbstractPersistable<ID> {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = 4812981035158319270L;
+
 	@Override
 	protected void setId(ID id) {
 		super.setId(id);

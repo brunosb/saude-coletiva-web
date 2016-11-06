@@ -2,6 +2,8 @@ package br.com.saude.coletiva.utils;
 
 public final class Paths {
 
+	//--------------------------Requisicoes para API-----------------------------------
+	
 	public static final String ALL = "/**";
 	
 	public static final String ROOT_PATH = "/api";
@@ -16,10 +18,13 @@ public final class Paths {
 	
 	public static final String ADMIN_PATH = PRIVATE_ROOT_PATH + USER_PATH + "/admin";
 	
-	public static final String LOGIN_PATH = "/login";
-	
-	//---------------------------------------------------------------------------------
-	
 	public static final String URGENCIA_EMERGENCIA_PATH = PUBLIC_ROOT_PATH + "/uue";
+	
+	//--------------------------Requisicoes para Controle de Usuario-------------------
+	
+	public static final String HOME_PAGE = "/home/**";
+	public static final String ADMIN_PAGE = "/admin/**";
+	
+	
 	
 }

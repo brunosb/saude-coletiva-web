@@ -43,7 +43,7 @@ public class PermissaoService extends ServiceGeneric<Permissao, Long>{
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @RequestMapping(value = "auth", method = RequestMethod.POST)
+    @RequestMapping(value = "/auth", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtAuthenticationRequest authenticationRequest, Device device) throws AuthenticationException {
 
         // Perform the security

@@ -20,8 +20,8 @@ import br.com.saude.coletiva.utils.BaseEntity;
 @AttributeOverride(name = "id", column = @Column(name = "pk_id"))
 public class Permissao extends BaseEntity<Long> {
 
-	private static final long serialVersionUID = 1L;
-	
+	private static final long serialVersionUID = -3221071462293239485L;
+
 	@NotNull
 	@Column(name = "role", length = 50)
 	@Enumerated(EnumType.STRING)
