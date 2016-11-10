@@ -3,7 +3,6 @@ package br.com.saude.coletiva;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,17 +14,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import br.com.saude.coletiva.security.JwtAuthenticationEntryPoint;
 import br.com.saude.coletiva.security.JwtAuthenticationTokenFilter;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
-	
-	@Autowired
-	private JwtAuthenticationEntryPoint unauthorizedHandler;
-	
+		
 	@Autowired
 	private UserDetailsService userService;
 	
@@ -52,8 +47,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                 // we don't need CSRF because our token is invulnerable
                 .csrf().disable()
 
-                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-
                 // don't create session
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 
@@ -75,13 +68,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
                         "/**/*.js",
                         "/fonts/**"
                 ).permitAll()
-                .anyRequest().authenticated()
-                
-                .and()
-                .formLogin()
-                .loginPage("/login").permitAll()
-                .and()
-                .logout().permitAll();
+                .anyRequest().authenticated();
 
         // Custom JWT based security filter
         httpSecurity

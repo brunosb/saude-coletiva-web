@@ -1,34 +1,32 @@
-<form class="form-horizontal">
-<fieldset>
+<form class="form-horizontal" ng-submit="autenticar()">
+	<fieldset>
 
-<!-- Form Name -->
-<legend>Login</legend>
+		<!-- Form Name -->
+		<legend>Login</legend>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="email">Email</label>  
-  <div class="col-md-4">
-  <input id="email" name="email" type="text" placeholder="digite seu email" class="form-control input-md" required="">
-    
-  </div>
-</div>
+		<!-- Text input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="email">Email</label>
+			<div class="col-md-4">
+				<input ng-model="usuario.username" id="email" name="email" type="email" placeholder="digite seu email" class="form-control input-md" required="">
+			</div>
+		</div>
 
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Senha</label>
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="digite sua senha" class="form-control input-md" required="">
-    <a href="/recuperar-senha"><span class="help-block">esqueceu sua senha ?</span></a>
-  </div>
-</div>
+		<!-- Password input-->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="password">Senha</label>
+			<div class="col-md-4">
+				<input ng-model="usuario.password" id="password" name="password" type="password" placeholder="digite sua senha" class="form-control input-md" required="">
+			</div>
+		</div>
 
-<!-- Button -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="logar"></label>
-  <div class="col-md-4">
-    <button id="logar" name="logar" class="btn btn-success">Logar</button>
-  </div>
-</div>
+		<!-- Button -->
+		<div class="form-group">
+			<label class="col-md-4 control-label" for="logar"></label>
+			<div class="col-md-4">
+				<button id="logar" name="logar" class="btn btn-success">Logar</button>
+			</div>
+		</div>
 
-</fieldset>
+	</fieldset>
 </form>
