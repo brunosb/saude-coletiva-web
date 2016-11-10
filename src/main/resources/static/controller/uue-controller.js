@@ -1,6 +1,7 @@
 appSistemaSaude.controller("uueController", function($scope, $http) {
 
 	$scope.locais = [];
+	$scope.local = {};
 	
 	$http({
 		method : 'GET',
@@ -16,6 +17,37 @@ appSistemaSaude.controller("uueController", function($scope, $http) {
 		console.log(response.status);
 	});
 	
+	$scope.cadastrar = function(){
+		$http({
+			method:'POST',
+			url:'/api/public/uue',
+			data:$scope.local	
+		}).then(function(response){
+			$scope.local = response.data
+			$scope.createMarker(response.data)
+			$scope.local={}
+		}, function(response) {
+			console.log(response.data);
+			console.log(response.status);
+		});
+	}
+	
+	$scope.filtroMapa = function(tipo){
+		$http({
+			method : 'GET',
+			url : '/api/public/uue/'+tipo,
+		}).then(function(response) {
+			$scope.locais = response.data;
+		    $scope.configMap();
+			for (i = 0; i < $scope.locais.length; i++){
+				$scope.createMarker($scope.locais[i]);
+		    };
+		}, function(response) {
+			console.log(response.data);
+			console.log(response.status);
+		});
+	};
+	
 	$scope.configMap = function(){
 		$("#map").googleMap({
 			zoom: 10, // Initial zoom level (optional)
@@ -27,10 +59,8 @@ appSistemaSaude.controller("uueController", function($scope, $http) {
     $scope.createMarker = function(local){
     	$("#map").addMarker({
     	  address: local.enderecoPostal, // GPS coords
-	      title: local.nome, // Title
-	      text:  local.especialidade
+	      title: local.tipo, // Title
+	      text:  local.descricao
 	    });
     };
-    
-    
 });	

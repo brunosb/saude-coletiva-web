@@ -15,25 +15,35 @@ public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 
 	private static final long serialVersionUID = 1731410271993907487L;
 
-	@NotNull
+	@Column(name = "nome")
 	private String nome;
 	
-	@Column(unique = true, name = "coordenada")
-	private String enderecoCoordenada;
+	@Column(unique = true, name = "latitude")
+	private String latitude;
 	
-	@Column(name = "postal")
+	@Column(unique = true, name = "longitude")
+	private String longitude;
+	
+	@NotNull
+	@Column(unique = true, name = "postal")
 	private String enderecoPostal;
 	
 	@NotNull
-	private String especialidade;
+	@Column(name = "tipo")
+	private String tipo;
+	
+	@Column(name = "descricao")
+	private String descricao;
 
-	public UnidadeUrgenciaEmergencia(String nome, String enderecoCoordenada, String enderecoPostal,
-			String especialidade) {
+	public UnidadeUrgenciaEmergencia(String nome, String latitude, String longitude, String enderecoPostal, String tipo,
+			String descricao) {
 		super();
 		this.nome = nome;
-		this.enderecoCoordenada = enderecoCoordenada;
+		this.latitude = latitude;
+		this.longitude = longitude;
 		this.enderecoPostal = enderecoPostal;
-		this.especialidade = especialidade;
+		this.tipo = tipo;
+		this.descricao = descricao;
 	}
 
 	public UnidadeUrgenciaEmergencia() {
@@ -48,12 +58,20 @@ public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 		this.nome = nome;
 	}
 
-	public String getEnderecoCoordenada() {
-		return enderecoCoordenada;
+	public String getLatitude() {
+		return latitude;
 	}
 
-	public void setEnderecoCoordenada(String enderecoCoordenada) {
-		this.enderecoCoordenada = enderecoCoordenada;
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 
 	public String getEnderecoPostal() {
@@ -64,13 +82,19 @@ public class UnidadeUrgenciaEmergencia extends BaseEntity<Long>{
 		this.enderecoPostal = enderecoPostal;
 	}
 
-	public String getEspecialidade() {
-		return especialidade;
+	public String getTipo() {
+		return tipo;
 	}
 
-	public void setEspecialidade(String especialidade) {
-		this.especialidade = especialidade;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
-	
-	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}	
 }

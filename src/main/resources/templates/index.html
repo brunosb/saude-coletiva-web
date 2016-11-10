@@ -38,8 +38,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-left">
 
-					<li><a href="home/mapa-urgencia-emergencia"><strong>Veja
-								nossas sedes</strong></a></li>
+					<li><a href="home/mapa-urgencia-emergencia"><strong>Mapa Urgência e Emergência</strong></a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -49,7 +48,7 @@
 
 	<!-- /.container -->
 
-	<div ng-view="ng-view"></div>
+	<div ng-view="ng-view" class="col-md-12"></div>
 
 </body>
 <footer>
@@ -67,6 +66,7 @@
 	<script src="./controller/login-controller.js"></script>
 	<script src="./controller/cadastro-usuario-controller.js"></script>
 	<script src="./controller/home-controller.js"></script>
+	<script src="./interceptor/token-interceptor.js"></script>
 	<script>
 		$('.carousel').carousel({
 			interval : 5000
